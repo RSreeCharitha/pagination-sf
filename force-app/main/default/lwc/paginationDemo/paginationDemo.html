@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Pagination Demo Contact">
+        <div class="slds-var-m-around_medium">
+            <template if:true={visibleContacts}>
+                <ol>
+                <template for:each={visibleContacts} for:item="con">
+
+                    <li key={con.id}> Name  - {con.Email}</li>
+                </template>
+            </ol>
+            </template>
+            <div slot="footer" class="slds-m-horizontal_medium"> 
+                <c-pagination-base records={totalContacts} onupdate={updateHandler}></c-pagination-base> 
+            </div>
+        </div>
+    </lightning-card>
+</template>
